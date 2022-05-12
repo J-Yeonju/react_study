@@ -5,24 +5,74 @@
       crossorigin
       src="https://unpkg.com/react@17/umd/react.development.js"
     ></script>
+    <!--react-->
     <script
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
     ></script>
+    <!--DOM-->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <div id="root"></div>
-
+    <div id="root">
+      <!--
+      <h1>Hi</h1>
+      <h3>Bye</h3>
+      <h5>Children</h5>
+      -->
+    </div>
+    <!--root element-->
     <script type="text/babel">
+      // babel compiler
       const rootElement = document.getElementById("root");
 
-      const text = "Hello, Yeonju!!";
-      const titleClassName = "title123";
-      const props = { className: titleClassName, children: text };
-      // const customH1 = <h1 {...props} />;
-      const customH1 = <h1 {...props} />;
-      // <h1 className={props.ClassName} children={props.childrene} />;
-      const element = customH1;
+      // 아래는 다 같은 결과이다.
+
+      const element = (
+        <>
+          <h1>Hi</h1>
+          <h3>Bye</h3>
+          <h5>Children4</h5>
+        </>
+      );
+
+      /*   
+      const element = (
+        <React.Fragment>
+          <h1>Hi</h1>
+          <h3>Bye</h3>
+          <h5>Children3</h5>
+        </React.Fragment>
+      );
+      */
+
+      /*
+      const element = (
+        <React.Fragment>
+          {[<h1>Hi</h1>, <h3>Bye</h3>, <h5>Children2</h5>]}
+        </React.Fragment>
+      );
+      */
+
+      /*
+      const element = (
+        <React.Fragment
+          children={[<h1>Hi</h1>, <h3>Bye</h3>, <h5>Children1</h5>]}
+        />
+      );
+      */
+
+      /*
+      const element = (
+        <div
+          className="box"
+          children={[
+            React.createElement("h1", null, "Hi"),
+            React.createElement("h3", null, "Bye"),
+            React.createElement("h5", null, "Children")
+          ]}
+        />
+      );
+      // div 안에 넣었기 때문에 구조가 다르다.
+      */
       ReactDOM.render(element, rootElement);
     </script>
   </body>
