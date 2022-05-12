@@ -9,19 +9,19 @@
       crossorigin
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
     ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <div id="root"></div>
 
-    <script>
+    <script type="text/babel">
       const rootElement = document.getElementById("root");
-      //const elementV = documenet.createElement("h1");
-      const element = React.createElement("h1", null, "Hello, world!");
-      //elementV.textContent = "Hello, world!";
 
-      console.log(element);
-      // console.log(elementV);
+      const text = "Hello, Yeonju!!";
+      const titleClassName = "title123";
+      const customH1 = <h1 className={titleClassName}>{text}</h1>;
+      const element = customH1;
+
       ReactDOM.render(element, rootElement);
-      // rootEelement.appendChild(element);
     </script>
   </body>
 </html>
