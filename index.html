@@ -18,9 +18,11 @@
 
       const text = "Hello, Yeonju!!";
       const titleClassName = "title123";
-      const customH1 = <h1 className={titleClassName}>{text}</h1>;
+      const props = { className: titleClassName, children: text };
+      // const customH1 = <h1 {...props} />;
+      const customH1 = <h1 {...props} />;
+      // <h1 className={props.ClassName} children={props.childrene} />;
       const element = customH1;
-
       ReactDOM.render(element, rootElement);
     </script>
   </body>
